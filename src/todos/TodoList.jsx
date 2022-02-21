@@ -1,3 +1,5 @@
+import { connect } from "react-redux";
+import { createTodo } from "./actions";
 import TodoForm from "./TodoForm";
 import TodoListItem from "./TodoListItem";
 
@@ -11,4 +13,12 @@ const TodoList = ({todos = [{text: 'Hello'}, {text: 'Another todo'}]}) => {
     )
 }
 
-export default TodoList;
+const mapStateToProps = state => ({
+    todos: state.todos,
+});
+
+const mapDispatchToProps = dispatch => ({
+    onCreatePressed: text => dispatch(createTodo(text)),
+});
+
+export default connect()(TodoList);
