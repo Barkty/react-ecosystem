@@ -3,7 +3,7 @@ import { removeTodo } from "./actions";
 import TodoForm from "./TodoForm";
 import TodoListItem from "./TodoListItem";
 
-const TodoList = ({todos = [{text: 'Hello'}, {text: 'Another todo'}], onRemovePressed}) => {
+const TodoList = ({todos = [], onRemovePressed}) => {
 
     return (
         <div className="list-wrapper">
