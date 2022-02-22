@@ -10,7 +10,7 @@ const TodoForm = ({ todos, onCreatePressed }) => {
             <input 
             type='text' 
             className="todo-input"
-            placeholder="Type your new todo here"
+            placeholder="Type your new todo here..."
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}/>
             <button 
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
     onCreatePressed: text => dispatch(createTodo(text)),
 });
 
-export default connect()(TodoForm);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);
